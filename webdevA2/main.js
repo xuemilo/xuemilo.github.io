@@ -1,31 +1,39 @@
-//target all elements to save to constants
+// target all elements to save to constants
+
 const nav1 = document.querySelector("#nav1");
 const nav2 = document.querySelector("#nav2");
 const nav3 = document.querySelector("#nav3");
 const nav4 = document.querySelector("#nav4");
 var allpages = document.querySelectorAll(".pages");
-//select all subtopic pages
-function hideall() { //function to hide all pages
-  for (let onepage of allpages) { //go through all subtopic pages
-    onepage.style.display = "none"; //hide it
+
+// select all subtopic pages
+
+function hideall() {  // function to hide all pages
+  for (let onepage of allpages) { // go through all subtopic pages
+    onepage.style.display = "none"; // hides it
   }
 }
 
-function show(pgno) { //function to show selected page no
+function show(pgno) { // function to show selected page no
   hideall();
-  //select the page based on the parameter passed in
+
+  // select the page based on the parameter passed in
+
   let onepage = document.querySelector("#page" + pgno);
-  onepage.style.display = "block"; //show the page
+  onepage.style.display = "block"; // show the page
 }
 
 // introduction button
-//dropdown for each nav button
+
+// dropdown for each nav button
+
 document.querySelector('#nav1').addEventListener('click', function () {
   const dropdown = this.nextElementSibling;
   dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
 });
 
 // if pressed on another nav button , dropdown will close
+
 document.addEventListener('click', (clickEvent) => {
   const dropdown = document.querySelector('.dropdown');
   const isClickInside = dropdown.contains(clickEvent.target);
@@ -36,13 +44,16 @@ document.addEventListener('click', (clickEvent) => {
 });
 
 // habitat button
+
 //dropdown for each nav button
+
 document.querySelector('#nav2').addEventListener('click', function () {
   const dropdown = this.nextElementSibling;
   dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
 });
 
 // if pressed on another nav button , dropdown will close
+
 document.addEventListener('click', (clickEvent) => {
   const dropdown = document.querySelector('.dropdown1');
   const isClickInside = dropdown.contains(clickEvent.target);
@@ -53,13 +64,16 @@ document.addEventListener('click', (clickEvent) => {
 });
 
 // behaviour button
+
 //dropdown for each nav button
+
 document.querySelector('#nav3').addEventListener('click', function () {
   const dropdown = this.nextElementSibling;
   dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
 });
 
 // if pressed on another nav button , dropdown will close
+
 document.addEventListener('click', (clickEvent) => {
   const dropdown = document.querySelector('.dropdown2');
   const isClickInside = dropdown.contains(clickEvent.target);
@@ -69,7 +83,7 @@ document.addEventListener('click', (clickEvent) => {
   }
 });
 
-/*assign anonymous eventhandler functions to call show function*/
+// assign anonymous eventhandler functions to call show function
 nav1.addEventListener("click", function () {
   show(1);
   document.getElementById("bigTitle").innerText = "Introduction"
@@ -97,38 +111,42 @@ nav4.addEventListener("click", function () {
 hideall();
 
 // hambrger menu functionality
+
 const hamBtn = document.querySelector("#hamIcon");
 const menuItemsList = document.querySelector("nav ul");
 hamBtn.addEventListener("click", toggleMenus);
-function toggleMenus() { /*open and close menu*/
-  //if menuItemsList dont have the class "menuShow", add it, else remove it
+function toggleMenus() { // open and close menu
   menuItemsList.classList.toggle("menuShow");
 }
 
 // parallax background
+
 window.addEventListener('scroll', () => {
   const scrollPosition = window.scrollY;
 
   // adjusts the speed of each layer
+
   document.getElementById('bgEffectMiddle').style.transform = `translateY(${scrollPosition * 0.5}px)`;
   document.getElementById('bgEffectFront').style.transform = `translateY(${scrollPosition * 0.3}px)`;
 });
 
-// BALL
-/*find references to all the buttons and ball */
+// hamster maze - ball
+
+// find references to all the buttons and ball
+
 const leftBtn = document.querySelector("#leftBtn");
 const rightBtn = document.querySelector("#rightBtn");
 const upBtn = document.querySelector("#upBtn");
 const downBtn = document.querySelector("#downBtn");
 const resetBtn = document.querySelector("#resetBtn");
 const ball = document.querySelector("#ball");
-var ballX = 0; //assign initial position of ball
+var ballX = 0; // assign initial position of ball
 var ballY = 0;
 
 function ResetPos() {
-  ballX = ballY = 0; //reset to zero
-  ball.style.left = ballX + "px"; //set left property to ball x variable
-  ball.style.top = ballY + "px"; //set top property to ball x variable
+  ballX = ballY = 0; // resets to zero
+  ball.style.left = ballX + "px"; // set left property to ball x variable
+  ball.style.top = ballY + "px"; // set top property to ball x variable
 }
 
 function MovePos(leftInc, topInc) {
@@ -142,15 +160,18 @@ function MovePos(leftInc, topInc) {
   const newY = ballY + topInc;
 
   // boundary check before updating visually
+
   if (newX < 0 || newX + ballSize > width || newY < 0 || newY + ballSize > height) {
     return; // stop once outside bounds
   }
 
   // temporarily move ball to test for collision
+
   ball.style.left = newX + "px";
   ball.style.top = newY + "px";
 
   // reverts when colliding
+
   if (collisionDetected()) {
     ball.style.left = ballX + "px";
     ball.style.top = ballY + "px";
@@ -164,43 +185,50 @@ function MovePos(leftInc, topInc) {
   ball.style.top = ballY + "px"; // set top css property to ball y variable
 
   // Check for win condition after each move
+
   checkingCollision();
 }
 
 //eventlistener to activate MoveLeft (named callback function)
+
 leftBtn.addEventListener("click", function () {
   MovePos(-10, 0);
 }); //no brackets after MoveLeft
-//eventListener to anonymous callback function (other way)
+
 rightBtn.addEventListener("click", function () {
   MovePos(10, 0);
 });
+
 upBtn.addEventListener("click", function () {
   MovePos(0, -10);
 });
+
 downBtn.addEventListener("click", function () {
   MovePos(0, 10);
 });
 
 resetBtn.addEventListener("click", ResetPos);
-document.addEventListener('keydown', function (kbEvt) {
-  //kbEvt: an event object passed to callback function
+document.addEventListener('keydown', function (kbEvt) { //kbEvt: an event object passed to callback function
   console.log(kbEvt); //see what is returned
   if (kbEvt.code === "ArrowRight") {
     MovePos(10, 0);
   }
+
   if (kbEvt.code === "ArrowLeft") {
     MovePos(-10, 0);
   }
+
   if (kbEvt.code === "ArrowDown") {
     MovePos(0, 10);
   }
+
   if (kbEvt.code === "ArrowUp") {
     MovePos(0, -10);
   }
 });
 
 // collision detection for div walls
+
 const walls = document.querySelectorAll(".wall");
 const player = document.querySelector("#ball");
 
@@ -228,6 +256,7 @@ function collisionDetected() {
 }
 
 // audio
+
 const winSound = new Audio('audio/yayAudio.mp3');
 winSound.preload = 'auto';
 
@@ -247,7 +276,8 @@ function checkingCollision() {
   }
 }
 
-/* Click button to change image & text in page 4 */
+// Click button to change image & text in page 4
+
 const images = [
   "images/Syrian.jpg",
   "images/Campbell.jpg",
@@ -290,6 +320,7 @@ function changeHamsterText() {
 }
 
 // button event listener
+
 document.getElementById("arrowRight").addEventListener("click", function () {
   showNextImage();
   changeHamsterText();
@@ -301,7 +332,9 @@ document.getElementById("arrowLeft").addEventListener("click", function () {
 });
 
 // animation for on scroll 
+
 // Find a common parent container
+
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     setTimeout(() => entry.target.classList.toggle('show', entry.isIntersecting), 200);
@@ -311,6 +344,7 @@ const observer = new IntersectionObserver(entries => {
 document.querySelectorAll('p, h2, .container1, .visualAid1, .visualAid2, .visualAid3, .visualAid4').forEach(el => observer.observe(el));
 
 //for dropdown menus
+
 const animatedBoxes2 = document.querySelectorAll('.contentAnim2');
 
 const observer2 = new IntersectionObserver(entries => {
@@ -324,6 +358,7 @@ const observer2 = new IntersectionObserver(entries => {
 });
 
 // MCQ quiz
+
 const btnSubmit = document.querySelector("#btnSubmit");
 btnSubmit.addEventListener("click", CheckAns);
 const scorebox = document.querySelector("#scorebox");
@@ -331,24 +366,32 @@ var q1, q2, q3, q4, q5, score = 0;
 
 function CheckAns() {
   score = 0; //reset score to 0, check ans and give score if correct
+
   //read the value of the selected radio button for q1
+
   q1 = document.querySelector("input[name='q1']:checked").value;
-  console.log(q1); //check q1 value retrieved
+  console.log(q1); // check q1 value retrieved
   if (q1 == "1-3 years") score++;
 
-  //read the value of the selected radio button for q2
+  //  read the value of the selected radio button for q2
+
   q2 = document.querySelector("input[name='q2']:checked").value;
   console.log(q2); //check q2 value retrieved
   if (q2 == "Syrian Hamster") score++;
 
-  //read the value of the selected radio button for q3
+  //  read the value of the selected radio button for q3
+
   q3 = document.querySelector("input[name='q3']:checked").value;
   console.log(q3); //check q3 value retrieved
   if (q3 == "Storing food") score++;
 
+  //  read the value of the selected radio button for q4
+
   q4 = document.querySelector("input[name='q4']:checked").value;
   console.log(q4); //check q4 value retrieved
   if (q4 == "Evening and Night") score++;
+
+  //  read the value of the selected radio button for q5
 
   q5 = document.querySelector("input[name='q5']:checked").value;
   console.log(q5); //check q5 value retrieved
@@ -357,12 +400,12 @@ function CheckAns() {
   scorebox.innerHTML = "Score: " + score;
 }
 
-/* full screen */
+// full screen
 const btnFS = document.querySelector("#btnFS");
 const btnWS = document.querySelector("#btnWS");
 btnFS.addEventListener("click", enterFullscreen);
 btnWS.addEventListener("click", exitFullscreen);
-function enterFullscreen() { //must be called by user generated event
+function enterFullscreen() { // must be called by user generated event
   if (document.documentElement.requestFullscreen) {
     document.documentElement.requestFullscreen();
   } else if (document.documentElement.mozRequestFullScreen) { // Firefox
