@@ -163,15 +163,8 @@ function MovePos(leftInc, topInc) {
   ball.style.left = ballX + "px"; // set left css property to ball x variable
   ball.style.top = ballY + "px"; // set top css property to ball y variable
 
-    // Check for win condition after each move
+  // Check for win condition after each move
   checkingCollision();
-}
-
-function MoveLeft() {
-  ballX = ballX - 10; //decrement by 10
-  ballY = ballY + 0; //no change
-  ball.style.left = ballX + "px"; //set left css property to ball x variable
-  ball.style.top = ballY + "px"; //set top css property to ball y variable
 }
 
 //eventlistener to activate MoveLeft (named callback function)
@@ -205,7 +198,6 @@ document.addEventListener('keydown', function (kbEvt) {
   if (kbEvt.code === "ArrowUp") {
     MovePos(0, -10);
   }
-  //Better option: use switch case instead
 });
 
 // collision detection for div walls
@@ -242,21 +234,18 @@ winSound.preload = 'auto';
 let gameWon = false;
 
 function checkingCollision() {
-    if (gameWon) return;
-    
-    const hamster = document.getElementById('ball').getBoundingClientRect();
-    const seed = document.getElementById('winSeed').getBoundingClientRect();
-    
-    if (hamster.right >= seed.left && hamster.left <= seed.right && 
-        hamster.bottom >= seed.top && hamster.top <= seed.bottom) {
-        winSound.play();
-        document.getElementById('gameStat').innerText = "You won!!!";
-        gameWon = true;
-    }
-}
+  if (gameWon) return;
 
-// Remove the setInterval - don't check automatically
-// setInterval(checkingCollision, 50);
+  const hamster = document.getElementById('ball').getBoundingClientRect();
+  const seed = document.getElementById('winSeed').getBoundingClientRect();
+
+  if (hamster.right >= seed.left && hamster.left <= seed.right &&
+    hamster.bottom >= seed.top && hamster.top <= seed.bottom) {
+    winSound.play();
+    document.getElementById('gameStat').innerText = "You won!!!";
+    gameWon = true;
+  }
+}
 
 /* Click button to change image & text in page 4 */
 const images = [
@@ -321,13 +310,6 @@ const observer = new IntersectionObserver(entries => {
 
 document.querySelectorAll('p, h2, .container1, .visualAid1, .visualAid2, .visualAid3, .visualAid4').forEach(el => observer.observe(el));
 
-// Observe all p and h2 elements within the container
-container.querySelectorAll('p, h2, .container1, .visualAid1, .visualAid2, .visualAid3, .visualAid4').forEach(element => {
-  observer.observe(element);
-});
-
-animatedBoxes.forEach(box => observer.observe(box));
-
 //for dropdown menus
 const animatedBoxes2 = document.querySelectorAll('.contentAnim2');
 
@@ -341,32 +323,36 @@ const observer2 = new IntersectionObserver(entries => {
   });
 });
 
-animatedBoxes.forEach(box => observer.observe(box));
-
 // MCQ quiz
 const btnSubmit = document.querySelector("#btnSubmit");
 btnSubmit.addEventListener("click", CheckAns);
 const scorebox = document.querySelector("#scorebox");
 var q1, q2, q3, q4, q5, score = 0;
+
 function CheckAns() {
   score = 0; //reset score to 0, check ans and give score if correct
   //read the value of the selected radio button for q1
   q1 = document.querySelector("input[name='q1']:checked").value;
   console.log(q1); //check q1 value retrieved
   if (q1 == "1-3 years") score++;
+
   //read the value of the selected radio button for q2
   q2 = document.querySelector("input[name='q2']:checked").value;
   console.log(q2); //check q2 value retrieved
   if (q2 == "Syrian Hamster") score++;
+
   //read the value of the selected radio button for q3
   q3 = document.querySelector("input[name='q3']:checked").value;
   console.log(q3); //check q3 value retrieved
   if (q3 == "Storing food") score++;
+
   q4 = document.querySelector("input[name='q4']:checked").value;
-  console.log(q4); //check q3 value retrieved
+  console.log(q4); //check q4 value retrieved
   if (q4 == "Evening and Night") score++;
+
   q5 = document.querySelector("input[name='q5']:checked").value;
-  console.log(q5); //check q3 value retrieved
+  console.log(q5); //check q5 value retrieved
   if (q5 == "Chocolate") score++;
+
   scorebox.innerHTML = "Score: " + score;
 }
