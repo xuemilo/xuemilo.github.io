@@ -1,4 +1,5 @@
 /* fonts */
+
 @font-face {
     font-family: QuicksandLight;
     src: url(fonts/Quicksand-Light.ttf) format('truetype');
@@ -10,6 +11,7 @@
 }
 
 /* typography */
+
 h1,
 h2,
 p,
@@ -34,19 +36,19 @@ h2 {
 }
 
 p,
+fieldset,
+.ptext,
+.btnDeco {
+    font-size: 1.5rem;
+}
+
+p,
 #nav1,
 #nav2,
 #nav3,
 #nav4,
 .btnDeco {
     font-family: QuicksandLight;
-}
-
-p,
-fieldset,
-.ptext,
-.btnDeco {
-    font-size: 1.5rem;
 }
 
 .htext {
@@ -66,7 +68,10 @@ ol li {
     word-wrap: break-word;
 }
 
-/* QR code */
+/* flex justify content to be centered */
+
+/* for QR code */
+
 .flexQR {
     padding-left: 10%;
     display: flex;
@@ -78,11 +83,7 @@ ol li {
     height: 100px;
 }
 
-.resFlex {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 0 10%;
-}
+/* for fullscreen buttons */
 
 .flexFSWS {
     padding-top: 10px;
@@ -93,8 +94,14 @@ ol li {
     gap: 10px;
 }
 
+/* page 3 ol table */
+#centerTable {
+    display: flex;
+    justify-content: center;
+}
 
-/* mini quiz */
+/* page 4 mini quiz */
+
 .miniQuiz {
     display: flex;
     flex-wrap: wrap;
@@ -120,7 +127,10 @@ label:hover {
     background-color: rgba(69, 84, 69, 0.658);
 }
 
+/* horizontal navigation bar */
+
 /* background blur effect */
+
 nav,
 #hamIcon,
 #nav1,
@@ -132,6 +142,7 @@ nav,
 }
 
 /* harmbuger menu */
+
 #hamIcon {
     display: block;
     /* unhide menu icon */
@@ -154,6 +165,7 @@ nav ul li {
 }
 
 /* nav bar */
+
 nav {
     position: sticky;
     top: 0;
@@ -176,6 +188,7 @@ ul {
 }
 
 /* nav buttons */
+
 #hamIcon {
     height: 56.8px;
 }
@@ -219,6 +232,7 @@ ul {
 }
 
 /* dropdown for nav buttons & its contents */
+
 .dropdown,
 .dropdown1,
 .dropdown2 {
@@ -258,7 +272,8 @@ a:hover {
 
 /* main content */
 
-/*for positoning paragraphs*/
+/* for positoning paragraphs */
+
 .ptext2 {
     padding-left: 10%;
     padding-right: 10%;
@@ -267,6 +282,7 @@ a:hover {
 html,
 body {
     overflow-x: hidden;
+    /* prevents horizontal scroll */
 }
 
 body {
@@ -276,6 +292,7 @@ body {
 }
 
 /* prallax background */
+
 .bgParallaxContainer {
     position: relative;
     height: 100vh;
@@ -311,6 +328,7 @@ body {
 }
 
 /* style bigTitle "hamster" */
+
 #bigTitle {
     position: relative;
     width: 80%;
@@ -322,6 +340,7 @@ body {
 }
 
 /* styling for external links */
+
 .extlink,
 #goBackToTop {
     text-decoration: none;
@@ -342,7 +361,9 @@ body {
 }
 
 /* animations */
+
 /* for title */
+
 .fade {
     opacity: 1;
     animation: fadeIn 2s ease-in;
@@ -359,6 +380,7 @@ body {
 }
 
 /* for content when user scrolls */
+
 .contentAnim {
     opacity: 0;
     transform: translateY(70px);
@@ -371,6 +393,7 @@ body {
 }
 
 /* mini game */
+
 #ball {
     background: rgb(183, 200, 183) url('images/css_sprites.png') -240px -10px;
     width: 216px;
@@ -384,6 +407,7 @@ body {
 }
 
 /* buttons for minigame */
+
 .buttonDisplay {
     display: flex;
     flex-wrap: wrap;
@@ -426,6 +450,7 @@ body {
 }
 
 /* individual mini game maze walls */
+
 .wall1,
 .wall2,
 .wall3,
@@ -508,9 +533,7 @@ body {
 
 .wall7 {
     top: 49px;
-    /* y position */
     left: 51px;
-    /* x position */
     width: 10px;
     height: 400px;
     background-color: rgb(244, 208, 142);
@@ -518,9 +541,7 @@ body {
 
 .wall8 {
     top: 0px;
-    /* y position */
     left: 240px;
-    /* x position */
     width: 10px;
     height: 90px;
     background-color: rgb(252, 240, 218);
@@ -528,9 +549,7 @@ body {
 
 .wall9 {
     top: 50px;
-    /* y position */
     left: 310px;
-    /* x position */
     width: 10px;
     height: 410px;
     background-color: rgb(250, 227, 184);
@@ -546,9 +565,7 @@ body {
 
 .wall11 {
     top: 280px;
-    /* y position */
     left: 121px;
-    /* x position */
     width: 10px;
     height: 230px;
     background-color: rgb(239, 221, 190);
@@ -572,9 +589,7 @@ body {
 
 .wall14 {
     top: 100px;
-    /* y position */
     left: 381px;
-    /* x position */
     width: 10px;
     height: 300px;
     background-color: rgb(255, 218, 149);
@@ -582,9 +597,7 @@ body {
 
 .wall15 {
     top: 0px;
-    /* y position */
     left: 381px;
-    /* x position */
     width: 10px;
     height: 50px;
     background-color: rgb(212, 254, 214);
@@ -592,9 +605,7 @@ body {
 
 .wall16 {
     top: 100px;
-    /* y position */
     left: 461px;
-    /* x position */
     width: 10px;
     height: 230px;
     background-color: rgb(238, 222, 254);
@@ -610,9 +621,7 @@ body {
 
 .wall18 {
     top: 450px;
-    /* y position */
     left: 381px;
-    /* x position */
     width: 10px;
     height: 60px;
     background-color: rgb(230, 255, 200);
@@ -636,9 +645,7 @@ body {
 
 .wall21 {
     top: 100px;
-    /* y position */
     left: 461px;
-    /* x position */
     width: 10px;
     height: 300px;
     background-color: rgb(197, 196, 248);
@@ -646,9 +653,7 @@ body {
 
 .wall22 {
     top: 50px;
-    /* y position */
     left: 531px;
-    /* x position */
     width: 10px;
     height: 280px;
     background-color: rgb(227, 251, 216);
@@ -664,9 +669,7 @@ body {
 
 .wall24 {
     top: 50px;
-    /* y position */
     left: 601px;
-    /* x position */
     width: 10px;
     height: 410px;
     background-color: rgb(234, 215, 252);
@@ -689,6 +692,7 @@ body {
 }
 
 /* sunflower seed for maze game */
+
 #winSeed {
     top: 330px;
     left: 320px;
@@ -718,6 +722,7 @@ body {
 }
 
 /* page 3 grid layout */
+
 .visualAid1,
 .visualAid2,
 .visualAid3,
@@ -791,6 +796,7 @@ body {
 
 .container1 {
     width: 80%;
+    display: flex;
     justify-self: center;
     padding: 10px;
     border-radius: 10px;
@@ -800,6 +806,7 @@ body {
 }
 
 /* arrow decoration for page 4 */
+
 #arrowLeft,
 #arrowRight {
     cursor: pointer;
@@ -813,6 +820,7 @@ body {
 }
 
 /* page 4 image decoration */
+
 figure {
     display: flex;
     flex-direction: column;
@@ -820,6 +828,7 @@ figure {
 }
 
 /* hamster images switch for page 4 */
+
 .flexbox {
     padding: 0 20px;
     display: flex;
@@ -838,6 +847,7 @@ figure {
 }
 
 /* to center & size images in page 4 */
+
 a img#centerImg {
     flex: 70%;
     margin: 0;
@@ -852,6 +862,7 @@ a img#centerImg {
 }
 
 /* responsive */
+
 @media (max-width: 800px) {
 
     h1 {
@@ -912,7 +923,7 @@ a img#centerImg {
     }
 
     .scaleMaze {
-        transform: scale(0.45);
+        transform: scale(0.55);
     }
 
     .gridTemplate {
