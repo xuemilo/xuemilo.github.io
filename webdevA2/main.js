@@ -373,6 +373,7 @@ function enterFullscreen() { //must be called by user generated event
     document.documentElement.msRequestFullscreen();
   }
 }
+
 function exitFullscreen() {
   if (document.exitFullscreen) {
     document.exitFullscreen();
