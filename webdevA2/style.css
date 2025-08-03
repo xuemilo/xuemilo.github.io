@@ -84,6 +84,15 @@ ol li {
     padding: 0 10%;
 }
 
+.flexFSWS {
+    padding-top: 10px;
+    margin-bottom: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
 
 /* mini quiz */
 .miniQuiz {
