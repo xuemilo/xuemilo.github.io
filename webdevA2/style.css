@@ -716,14 +716,6 @@ body {
     transform: scale(1);
 }
 
-/* pages */
-.flexbox {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
-
 /* page 3 grid layout */
 .visualAid1,
 .visualAid2,
@@ -809,14 +801,6 @@ body {
 /* arrow decoration for page 4 */
 #arrowLeft,
 #arrowRight {
-    margin: 0 10px;
-    color: white;
-    background-color: rgb(61, 78, 61);
-    font-size: 4vw;
-    text-shadow: 0 0 4px rgb(212, 224, 212);
-    width: 72px;
-    height: 72px;
-    text-align: center;
     cursor: pointer;
     border: none;
     transition: transform 0.3s ease-out;
@@ -828,21 +812,23 @@ body {
 }
 
 /* page 4 image decoration */
-#centerTable,
-#centerImg {
-    margin-left: auto;
-    margin-right: auto;
-}
-
 figure {
     display: flex;
+    flex-direction: column;
     margin: 0;
 }
 
-#centerImg {
+/* hamster images switch for page 4 */
+.flexbox {
+    padding: 0 20px;
     display: flex;
-    width: 60%;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#centerImg {
     transition: transform 0.3s ease-out;
+    margin: 0px 15px;
 }
 
 #centerImg:hover {
