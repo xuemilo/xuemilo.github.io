@@ -62,7 +62,28 @@ fieldset,
 ol li {
     color: white;
     font-size: 4.5rem;
+    text-wrap: wrap;
+    word-wrap: break-word;
 }
+
+/* QR code */
+.flexQR {
+    padding-left: 10%;
+    display: flex;
+    height: 200px;
+}
+
+#qrCodeImg {
+    width: 100px;
+    height: 100px;
+}
+
+.resFlex {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 10%;
+}
+
 
 /* mini quiz */
 .miniQuiz {
@@ -72,11 +93,12 @@ ol li {
     justify-self: center;
     width: 60%;
 }
+
 fieldset {
     color: white;
     font-family: QuicksandLight;
     margin: 20px 0px;
-    background-color:  rgba(119, 139, 119, 0.3);
+    background-color: rgba(119, 139, 119, 0.3);
     border-radius: 10px;
     height: 20%;
 }
@@ -86,7 +108,7 @@ label {
 }
 
 label:hover {
-    background-color:  rgba(69, 84, 69, 0.658);
+    background-color: rgba(69, 84, 69, 0.658);
 }
 
 /* background blur effect */
@@ -226,9 +248,6 @@ a:hover {
 }
 
 /* main content */
-.noMargin {
-    margin: 0;
-}
 
 /*for positoning paragraphs*/
 .ptext2 {
@@ -358,6 +377,7 @@ body {
 /* buttons for minigame */
 .buttonDisplay {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
     margin-bottom: 8px;
@@ -375,6 +395,11 @@ body {
 .btnDeco:hover {
     background-color: rgb(61, 60, 60);
     transform: scale(1.1);
+}
+
+.scaleMazeContainer {
+    display: flex;
+    justify-content: center;
 }
 
 .scaleMaze {
@@ -673,6 +698,8 @@ body {
 }
 
 .imgAlign img {
+    height: 35%;
+    width: 35%;
     transform: scale(0.9);
     transition: all 0.5s ease-out;
 }
@@ -694,10 +721,17 @@ body {
 .visualAid2,
 .visualAid3,
 .visualAid4 {
-    width: 70%;
-    height: 60%;
     display: flex;
+    align-items: center;
     justify-content: center;
+}
+
+.visualAid1 img,
+.visualAid2 img,
+.visualAid3 img,
+.visualAid4 img {
+    width: 300px;
+    height: 200px;
 }
 
 .gridTemplate {
@@ -705,6 +739,13 @@ body {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 500px 500px 500px 500px;
     place-items: center;
+}
+
+.grid1,
+.grid2,
+.grid3,
+.grid4 {
+    word-wrap: break-word;
 }
 
 .grid1 {
@@ -785,9 +826,13 @@ body {
     margin-right: auto;
 }
 
+figure {
+    margin: none;
+}
+
 #centerImg {
     display: flex;
-    width: 50%;
+    width: 60%;
     transition: transform 0.3s ease-out;
 }
 
@@ -810,30 +855,42 @@ a img#centerImg {
     background-color: rgb(61, 78, 61);
 }
 
-
-/* responsive video */
-.resVideo {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
-    padding-top: 56.25%;
-    /* Aspect ratio for 16:9 */
-}
-
-.resVideo iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
 /* responsive */
 @media (max-width: 800px) {
 
     h1 {
         font-size: 7rem;
     }
+
+    .ptext {
+        padding: 0;
+    }
+
+    #centerImg {
+        width: 80%;
+    }
+
+    #qrCodeImg {
+        display: none;
+    }
+
+    .imgAlign img {
+        height: 50%;
+        width: 50%;
+        transform: scale(0.9);
+        transition: all 0.5s ease-out;
+    }
+
+    /*hide QR code */
+    h1 {
+        background: lightgreen;
+    }
+
+    h1::after {
+        content: "(mobile)";
+    }
+
+    /*append text 'mobile’ */
 
     #navFlex {
         display: flex;
@@ -870,12 +927,13 @@ a img#centerImg {
     }
 
     .scaleMaze {
-        transform: scale(0.5);
+        transform: scale(0.45);
     }
 
     .gridTemplate {
         grid-template-columns: 1fr;
-        grid-template-rows: 400px 400px 400px 400px 400px 400px 400px 400px;
+        grid-template-rows: repeat(8, minmax(400px, auto));
+        /* Grows if needed */
         place-items: normal;
     }
 
