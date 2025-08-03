@@ -99,8 +99,7 @@ ol li {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    justify-self: center;
-    width: 60%;
+    justify-content: center;
 }
 
 fieldset {
@@ -810,7 +809,7 @@ body {
 /* arrow decoration for page 4 */
 #arrowLeft,
 #arrowRight {
-    margin: 0 30px;
+    margin: 0 10px;
     color: white;
     background-color: rgb(61, 78, 61);
     font-size: 4vw;
@@ -836,6 +835,7 @@ body {
 }
 
 figure {
+    display: flex;
     margin: 0;
 }
 
@@ -889,8 +889,6 @@ a img#centerImg {
         transform: scale(0.9);
         transition: all 0.5s ease-out;
     }
-
-    /*append text 'mobile’ */
 
     #navFlex {
         display: flex;
