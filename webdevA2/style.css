@@ -98,8 +98,9 @@ ol li {
 .miniQuiz {
     display: flex;
     flex-wrap: wrap;
+    justify-self: center;
     flex-direction: column;
-    justify-content: center;
+    width: 80%;
 }
 
 fieldset {
