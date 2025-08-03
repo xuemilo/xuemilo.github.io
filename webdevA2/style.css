@@ -1,0 +1,921 @@
+/* fonts */
+@font-face {
+    font-family: QuicksandLight;
+    src: url(fonts/Quicksand-Light.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: Marcellus;
+    src: url(fonts/Marcellus-Regular.ttf) format('truetype');
+}
+
+/* typography */
+h1,
+h2,
+p,
+#hamIcon,
+#nav1,
+#nav2,
+#nav3,
+#nav4,
+.btnDeco {
+    color: white;
+}
+
+h1 {
+    font-family: Marcellus;
+    font-size: 10rem;
+}
+
+h2 {
+    text-align: center;
+    font-family: Marcellus;
+    font-size: 3.5rem;
+}
+
+p,
+#nav1,
+#nav2,
+#nav3,
+#nav4,
+.btnDeco {
+    font-family: QuicksandLight;
+}
+
+p,
+fieldset,
+.ptext,
+.btnDeco {
+    font-size: 1.5rem;
+}
+
+.htext {
+    padding-top: 20px;
+    margin-bottom: 10px;
+}
+
+.ptext {
+    text-align: center;
+    padding: 0px 100px 10px 100px;
+}
+
+ol li {
+    color: white;
+    font-size: 4.5rem;
+}
+
+/* mini quiz */
+.miniQuiz {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-self: center;
+    width: 60%;
+}
+fieldset {
+    color: white;
+    font-family: QuicksandLight;
+    margin: 20px 0px;
+    background-color:  rgba(119, 139, 119, 0.3);
+    border-radius: 10px;
+    height: 20%;
+}
+
+label {
+    display: block
+}
+
+label:hover {
+    background-color:  rgba(69, 84, 69, 0.658);
+}
+
+/* background blur effect */
+nav,
+#hamIcon,
+#nav1,
+#nav2,
+#nav3,
+#nav4 {
+    background-color: rgb(24, 29, 24, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+/* harmbuger menu */
+#hamIcon {
+    display: block;
+    /* unhide menu icon */
+}
+
+nav ul {
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+nav ul.menuShow {
+    display: flex;
+    /* to unhide menu items */
+    opacity: 1;
+}
+
+nav ul li {
+    display: block;
+    /* make menu items vertical */
+}
+
+/* nav bar */
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: 56.8px;
+}
+
+#navFlex {
+    display: flex;
+    justify-content: space-between;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+/* nav buttons */
+#hamIcon {
+    height: 56.8px;
+}
+
+#hamIcon,
+#nav1,
+#nav2,
+#nav3,
+#nav4 {
+    border: none;
+    padding: 20px 20px;
+    margin: 0;
+    cursor: pointer;
+    transition: 0.3s;
+    /* fade effect */
+}
+
+#hamIcon:hover,
+#nav1:hover,
+#nav2:hover,
+#nav3:hover,
+#nav4:hover {
+    background-color: rgb(36, 44, 36);
+    font-weight: bold;
+    text-shadow: 0 0 10px white;
+}
+
+#nav1:hover,
+#nav2:hover,
+#nav3:hover,
+#nav4:hover {
+    text-decoration: underline;
+}
+
+#nav1:focus,
+#nav2:focus,
+#nav3:focus,
+#nav4:focus {
+    background-color: rgba(119, 139, 119, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+/* dropdown for nav buttons & its contents */
+.dropdown,
+.dropdown1,
+.dropdown2 {
+    position: relative;
+}
+
+.dropdownContent,
+.dropdownContent1,
+.dropdownContent2 {
+    display: none;
+    position: absolute;
+}
+
+.showDropdown.show,
+.showDropdown1.show,
+.showDropdown2.show {
+    display: block;
+}
+
+.dropdownContent a,
+.dropdownContent1 a,
+.dropdownContent2 a {
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none;
+    background-color: rgba(200, 216, 200, 0.3);
+    backdrop-filter: blur(10px);
+    font-family: QuicksandLight;
+    font-size: 1.4rem;
+    color: black;
+}
+
+a:hover {
+    background-color: rgba(226, 244, 226, 0.3);
+    text-shadow: 0px 0px 1px rgb(0, 0, 0);
+}
+
+/* main content */
+.noMargin {
+    margin: 0;
+}
+
+/*for positoning paragraphs*/
+.ptext2 {
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+html,
+body {
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0px;
+    background-color: rgb(40, 55, 40);
+    user-select: none;
+}
+
+/* prallax background */
+.bgParallaxContainer {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.bgParallax {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-attachment: fixed;
+    /* makes it have parallax effect */
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#bgEffect {
+    background-image: url(images/Background.jpg);
+    z-index: 1;
+}
+
+#bgEffectMiddle {
+    background-image: url(images/MiddleBg.png);
+    z-index: 2;
+    transform: translateY(0);
+}
+
+#bgEffectFront {
+    background-image: url(images/FrontBg.png);
+    z-index: 3;
+    transform: translateY(0);
+}
+
+/* style bigTitle "hamster" */
+#bigTitle {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    z-index: 10;
+    word-wrap: break-word;
+    text-shadow: 0 0 10px white;
+}
+
+/* styling for external links */
+.extlink,
+#goBackToTop {
+    text-decoration: none;
+    color: rgb(142, 177, 165);
+}
+
+.extlink:hover {
+    text-decoration: underline;
+}
+
+#goBackToTop {
+    float: right;
+}
+
+#goBackToTop:hover {
+    color: black;
+    text-shadow: 0px 0px 6px rgb(0, 0, 0);
+}
+
+/* animations */
+/* for title */
+.fade {
+    opacity: 1;
+    animation: fadeIn 2s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* for content when user scrolls */
+.contentAnim {
+    opacity: 0;
+    transform: translateY(70px);
+    transition: all 1s ease;
+}
+
+.contentAnim.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* mini game */
+#ball {
+    background: rgb(183, 200, 183) url('images/css_sprites.png') -240px -10px;
+    width: 216px;
+    height: 216px;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: scale(0.22);
+    transform-origin: top left;
+}
+
+/* buttons for minigame */
+.buttonDisplay {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 8px;
+}
+
+.btnDeco {
+    border: none;
+    padding: 5px 13px;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: black;
+    transition: 0.3s;
+}
+
+.btnDeco:hover {
+    background-color: rgb(61, 60, 60);
+    transform: scale(1.1);
+}
+
+.scaleMaze {
+    transform: scale(0.9)
+}
+
+.mazeContainer {
+    position: relative;
+    display: flex;
+    height: 510px;
+    width: 680px;
+    justify-self: center;
+    background-color: rgb(0, 0, 0);
+    border-radius: 25px;
+}
+
+/* individual mini game maze walls */
+.wall1,
+.wall2,
+.wall3,
+.wall4,
+.wall5,
+.wall6,
+.wall7,
+.wall8,
+.wall9,
+.wall10,
+.wall11,
+.wall12,
+.wall13,
+.wall14,
+.wall15,
+.wall16,
+.wall17,
+.wall18,
+.wall19,
+.wall20,
+.wall21,
+.wall22,
+.wall23,
+.wall24,
+.wall25,
+.wall26,
+#winSeed {
+    position: absolute;
+}
+
+.wall1 {
+    top: 0;
+    /* y position */
+    left: 116px;
+    /* x position */
+    width: 10px;
+    height: 60px;
+    background-color: rgb(244, 197, 197);
+}
+
+.wall2 {
+    top: 50px;
+    left: 60px;
+    width: 120px;
+    height: 10px;
+    background-color: rgb(180, 180, 244);
+}
+
+.wall3 {
+    top: 110px;
+    left: 120px;
+    width: 10px;
+    height: 110px;
+    background-color: rgb(226, 198, 253);
+}
+
+.wall4 {
+    top: 50px;
+    left: 180px;
+    width: 10px;
+    height: 100px;
+    background-color: rgb(205, 241, 135);
+}
+
+.wall5 {
+    top: 210px;
+    left: 120px;
+    width: 190px;
+    height: 10px;
+    background-color: rgb(250, 216, 246);
+}
+
+.wall6 {
+    top: 140px;
+    left: 180px;
+    width: 70px;
+    height: 10px;
+    background-color: rgb(244, 226, 178);
+}
+
+.wall7 {
+    top: 49px;
+    /* y position */
+    left: 51px;
+    /* x position */
+    width: 10px;
+    height: 400px;
+    background-color: rgb(244, 208, 142);
+}
+
+.wall8 {
+    top: 0px;
+    /* y position */
+    left: 240px;
+    /* x position */
+    width: 10px;
+    height: 90px;
+    background-color: rgb(252, 240, 218);
+}
+
+.wall9 {
+    top: 50px;
+    /* y position */
+    left: 310px;
+    /* x position */
+    width: 10px;
+    height: 410px;
+    background-color: rgb(250, 227, 184);
+}
+
+.wall10 {
+    top: 270px;
+    left: 121px;
+    width: 130px;
+    height: 10px;
+    background-color: rgb(208, 225, 248);
+}
+
+.wall11 {
+    top: 280px;
+    /* y position */
+    left: 121px;
+    /* x position */
+    width: 10px;
+    height: 230px;
+    background-color: rgb(239, 221, 190);
+}
+
+.wall12 {
+    top: 330px;
+    left: 200px;
+    width: 120px;
+    height: 10px;
+    background-color: rgb(252, 222, 247);
+}
+
+.wall13 {
+    top: 390px;
+    left: 121px;
+    width: 130px;
+    height: 10px;
+    background-color: rgb(250, 223, 219);
+}
+
+.wall14 {
+    top: 100px;
+    /* y position */
+    left: 381px;
+    /* x position */
+    width: 10px;
+    height: 300px;
+    background-color: rgb(255, 218, 149);
+}
+
+.wall15 {
+    top: 0px;
+    /* y position */
+    left: 381px;
+    /* x position */
+    width: 10px;
+    height: 50px;
+    background-color: rgb(212, 254, 214);
+}
+
+.wall16 {
+    top: 100px;
+    /* y position */
+    left: 461px;
+    /* x position */
+    width: 10px;
+    height: 230px;
+    background-color: rgb(238, 222, 254);
+}
+
+.wall17 {
+    top: 100px;
+    left: 391px;
+    width: 70px;
+    height: 10px;
+    background-color: rgb(202, 190, 255);
+}
+
+.wall18 {
+    top: 450px;
+    /* y position */
+    left: 381px;
+    /* x position */
+    width: 10px;
+    height: 60px;
+    background-color: rgb(230, 255, 200);
+}
+
+.wall19 {
+    top: 390px;
+    left: 531px;
+    width: 70px;
+    height: 10px;
+    background-color: rgb(198, 199, 255);
+}
+
+.wall20 {
+    top: 450px;
+    left: 391px;
+    width: 220px;
+    height: 10px;
+    background-color: rgb(233, 196, 255);
+}
+
+.wall21 {
+    top: 100px;
+    /* y position */
+    left: 461px;
+    /* x position */
+    width: 10px;
+    height: 300px;
+    background-color: rgb(197, 196, 248);
+}
+
+.wall22 {
+    top: 50px;
+    /* y position */
+    left: 531px;
+    /* x position */
+    width: 10px;
+    height: 280px;
+    background-color: rgb(227, 251, 216);
+}
+
+.wall23 {
+    top: 40px;
+    left: 391px;
+    width: 150px;
+    height: 10px;
+    background-color: rgb(238, 251, 180);
+}
+
+.wall24 {
+    top: 50px;
+    /* y position */
+    left: 601px;
+    /* x position */
+    width: 10px;
+    height: 410px;
+    background-color: rgb(234, 215, 252);
+}
+
+.wall25 {
+    top: 450px;
+    left: 190px;
+    width: 120px;
+    height: 10px;
+    background-color: rgb(206, 221, 255);
+}
+
+.wall26 {
+    top: 320px;
+    left: 471px;
+    width: 70px;
+    height: 10px;
+    background-color: rgb(250, 251, 197);
+}
+
+/* sunflower seed for maze game */
+#winSeed {
+    top: 330px;
+    left: 320px;
+    width: 210px;
+    height: 315px;
+    background: url('images/css_sprites.png') -10px -10px;
+    background-repeat: no-repeat;
+    transform: scale(0.19);
+}
+
+.imgAlign {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.imgAlign img {
+    transform: scale(0.9);
+    transition: all 0.5s ease-out;
+}
+
+.imgAlign img:hover {
+    transform: scale(1);
+}
+
+/* pages */
+.flexbox {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+/* page 3 grid layout */
+.visualAid1,
+.visualAid2,
+.visualAid3,
+.visualAid4 {
+    width: 70%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+}
+
+.gridTemplate {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 500px 500px 500px 500px;
+    place-items: center;
+}
+
+.grid1 {
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+
+.visualAid1 {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+.visualAid2 {
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+.grid2 {
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+.grid3 {
+    grid-column: 1/2;
+    grid-row: 3/4;
+}
+
+.visualAid3 {
+    grid-column: 2/3;
+    grid-row: 3/4;
+}
+
+.visualAid4 {
+    grid-column: 1/2;
+    grid-row: 4/5;
+}
+
+.grid4 {
+    grid-column: 2/3;
+    grid-row: 4/5;
+}
+
+.container1 {
+    width: 80%;
+    justify-self: center;
+    padding: 10px;
+    border-radius: 10px;
+    border-color: rgb(124, 174, 124);
+    background-color: rgb(47, 56, 47);
+    box-shadow: 8px 5px rgb(49, 67, 49), 16px 10px rgb(73, 97, 73);
+}
+
+/* arrow decoration for page 4 */
+#arrowLeft,
+#arrowRight {
+    margin: 0 30px;
+    color: white;
+    background-color: rgb(61, 78, 61);
+    font-size: 4vw;
+    text-shadow: 0 0 4px rgb(212, 224, 212);
+    width: 72px;
+    height: 72px;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    transition: transform 0.3s ease-out;
+}
+
+#arrowLeft:hover,
+#arrowRight:hover {
+    transform: scale(1.1);
+}
+
+/* page 4 image decoration */
+#centerTable,
+#centerImg {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#centerImg {
+    display: flex;
+    width: 50%;
+    transition: transform 0.3s ease-out;
+}
+
+#centerImg:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgb(24, 29, 24);
+}
+
+/* to center & size images in page 4 */
+a img#centerImg {
+    flex: 70%;
+    margin: 0;
+}
+
+#page1,
+#page2,
+#page3,
+#page4 {
+    height: fit-content;
+    background-color: rgb(61, 78, 61);
+}
+
+
+/* responsive video */
+.resVideo {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 56.25%;
+    /* Aspect ratio for 16:9 */
+}
+
+.resVideo iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* responsive */
+@media (max-width: 800px) {
+
+    h1 {
+        font-size: 7rem;
+    }
+
+    #navFlex {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: left;
+    }
+
+    #nav1,
+    #nav2,
+    #nav3,
+    #nav4 {
+        width: 100%;
+    }
+
+    .showDropdown.show,
+    .showDropdown1.show,
+    .showDropdown2.show,
+    .dropdownContent a,
+    .dropdownContent1 a,
+    .dropdownContent2 a {
+        display: none;
+    }
+
+    .scaleMaze {
+        transform: scale(0.5);
+    }
+
+    .gridTemplate {
+        grid-template-columns: 1fr;
+        grid-template-rows: 400px 400px 400px 400px 400px 400px 400px 400px;
+        place-items: normal;
+    }
+
+    .grid1 {
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+
+    .visualAid1 {
+        grid-column: 1/2;
+        grid-row: 2/3;
+    }
+
+    .grid2 {
+        grid-column: 1/2;
+        grid-row: 3/4;
+    }
+
+    .visualAid2 {
+        grid-column: 1/2;
+        grid-row: 4/5;
+    }
+
+    .grid3 {
+        grid-column: 1/2;
+        grid-row: 5/6;
+    }
+
+    .visualAid3 {
+        grid-column: 1/2;
+        grid-row: 6/7;
+    }
+
+    .grid4 {
+        grid-column: 1/2;
+        grid-row: 7/8;
+    }
+
+    .visualAid4 {
+        grid-column: 1/2;
+        grid-row: 8/9;
+    }
+}

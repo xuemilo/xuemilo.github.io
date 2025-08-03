@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamsters</title>
+</head>
+
+<body>
+    <header>
+        <!--navigation bar-->
+        <nav>
+            <!-- hamburger icon -->
+            <div id="navFlex">
+                <button id="hamIcon">&#9776;</button>
+                <ul>
+                    <!--navigation buttons-->
+                    <li>
+                        <div class="dropdown">
+                            <button id="nav1">Introduction</button>
+                            <div class="dropdownContent">
+                                <a href="#intro1">Origin</a>
+                                <a href="#intro2">Mini-game</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="dropdown1">
+                            <button id="nav2">Habitat</button>
+                            <div class="dropdownContent1">
+                                <a href="#habitat1">Necessities</a>
+                                <a href="#habitat2">Enrichment</a>
+                                <a href="#habitat3">Cage Ideas</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="dropdown2">
+                            <button id="nav3">Behaviour</button>
+                            <div class="dropdownContent2">
+                                <a href="#behave1">Natural Behaviours</a>
+                                <a href="#behave2">Diet</a>
+                                <a href="#centerTable">Diet Tips</a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <div class="dropdown">
+                            <button id="nav4">Species</button>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <h1 id="bigTitle" class="fade">Hamsters</h1>
+    </header>
+    <!--parallax background-->
+    <div class="bgParallaxContainer">
+        <div class="bgParallax" id="bgEffect"></div>
+        <div class="bgParallax" id="bgEffectMiddle"></div>
+        <div class="bgParallax" id="bgEffectFront"></div>
+    </div>
+    <!--pages-->
+    <main id="pagecontainer">
+        <!--page 1-->
+        <section class="pages" id="page1">
+            <h2 id="intro1" class="htext contentAnim"> In 1839,</h2>
+            <p class="ptext contentAnim">
+                The Syrian hamster, also known as the "golden" hamster,
+                is the best known species of hamster, commonly kept as a pet.
+                It was scientifically discovered by
+                <a href="https://en.wikipedia.org/wiki/George_Robert_Waterhouse" class="extlink">George Robert
+                    Waterhouse</a>.
+                Researchers were not able to successfully breed and domesticate hamsters until 1939.
+            </p>
+
+            <h2 class="htext contentAnim">Whiskers, Wiggles & Wonder</h2>
+            <p class="ptext contentAnim">
+                Hamsters are small, nocturnal rodents that are popular as pets,
+                known for their playful nature and unique characteristics.
+                Hamsters are small, compact animals with short tails, furry ears, and sturdy legs.
+                Their thick, silky fur varies in length and comes in colors such as
+                black, grey, white, brown, and honey, depending on the species.
+            </p>
+            <h2 class="htext contentAnim">Senses</h2>
+            <p class="ptext contentAnim">
+                Hamsters have poor eyesight and are colorblind, but they are still curious and love to explore.<br>
+                They rely on their strong sense of smell and hearing to find food, recognize their babies,
+                and sense nearby movement. <br>
+                Scent glands help them mark territory, and they can even learn to recognize their owner's voice!
+            </p>
+            <!--mini game-->
+            <h2 id="intro2" class="htext contentAnim">Hamster Maze</h2>
+            <p id="gameStat" class="ptext">Objective: Get to the sunflower seed!</p>
+            <div class="buttonDisplay">
+                <button id="resetBtn" class="btnDeco">Restart</button>
+                <button id="leftBtn" class="btnDeco">&#129032;</button>
+                <button id="rightBtn" class="btnDeco">&#129034;</button>
+                <button id="upBtn" class="btnDeco">&#129033;</button>
+                <button id="downBtn" class="btnDeco">&#129035;</button>
+            </div>
+            <div class="scaleMaze">
+                <div class="mazeContainer">
+                    <div class="wall wall1"></div>
+                    <div class="wall wall2"></div>
+                    <div class="wall wall3"></div>
+                    <div class="wall wall4"></div>
+                    <div class="wall wall5"></div>
+                    <div class="wall wall6"></div>
+                    <div class="wall wall7"></div>
+                    <div class="wall wall8"></div>
+                    <div class="wall wall9"></div>
+                    <div class="wall wall10"></div>
+                    <div class="wall wall11"></div>
+                    <div class="wall wall12"></div>
+                    <div class="wall wall13"></div>
+                    <div class="wall wall14"></div>
+                    <div class="wall wall15"></div>
+                    <div class="wall wall16"></div>
+                    <div class="wall wall17"></div>
+                    <div class="wall wall18"></div>
+                    <div class="wall wall19"></div>
+                    <div class="wall wall20"></div>
+                    <div class="wall wall21"></div>
+                    <div class="wall wall22"></div>
+                    <div class="wall wall23"></div>
+                    <div class="wall wall24"></div>
+                    <div class="wall wall25"></div>
+                    <div class="wall wall26"></div>
+                    <div id="winSeed"></div>
+                    <div id="ball"></div>
+                </div>
+            </div>
+            <br>
+        </section>
+
+        <!--page 2-->
+        <section class="pages" id="page2">
+            <h2 id="habitat1" class="contentAnim">Basic Care For Your Hamster</h2>
+            <p class="ptext contentAnim">Germany is known for their high standards of hamster care. The guide below are
+                some essentials to ensuring a pet hamster has the basic care it needs in setting up its enclosure!</p>
+            <br>
+            <p class="ptext2 contentAnim"><strong>Cage Size</strong>: The Bundesministerium für Ernährung und
+                Landwirtschaft recommends a minimum of 5,000 square centimeters for a hamster cage.</p> <br>
+            <p class="ptext2 contentAnim"><strong>Burrowing</strong>: The recommended minimum height for bedding is 20
+                centimeters, the more the better!</p> <br>
+            <p class="ptext2 contentAnim"><strong>Substrate</strong>: Any paper-based bedding, hemp shavings, aspen
+                shavings, birch shavings and spruce shavings.</p> <br>
+            <p class="ptext2 contentAnim"><strong>Wheel</strong>: A necessity for every hamster! Silent runners, silent
+                spinners, rodent wheel, NiteAngel wheels and cork and wooden wheels are safe options.</p>
+            <br><br>
+
+            <h2 id="habitat2" class="contentAnim">Hamster Enrichment</h2>
+            <p class="contentAnim ptext2">
+                <strong>Forage</strong>:
+                Sprinkle your hamster's main diet, safe herbs, leaves, <a
+                    href="https://thehamstercare.com/best-hamster-sprays-that-are-safe/" class="extlink">sprays</a> and
+                flowers all over the enclosure.
+                This allows for your hamster to look for it, with it's extremely good sense of smell,
+                it also helps to stimulate their senses with a range of new smells.
+            </p>
+            <br>
+
+            <p class="contentAnim ptext2">
+                <strong>Different Substrates</strong>:
+                Provide your hamster with multiple different substrates, it allows your hamster another texture to touch
+                and dig in rather than burrow in.
+                A sand bath helps remove any excess oils from its coat and also gives them an enrichment for digging as
+                well as it can help keep claw worn down.
+            </p>
+            <br>
+
+            <p class="contentAnim ptext2">
+                <strong>Hideouts</strong>:
+                Place multiple hideouts for them to choose from, allowing your hamster to quickly go to another hideout
+                to feel safe as they tend to not like to be in open space too much.
+            </p>
+            <br><br>
+
+            <h2 id="habitat3" class="contentAnim">Admirable Enclosure Ideas</h2>
+            <div class="imgAlign">
+                <img src="images/cage1.jpg" alt="Hamster Enclosure 1">
+                <img src="images/cage2.jpg" alt="Hamster Enclosure 2">
+                <img src="images/cage3.jpg" alt="Hamster Enclosure 3">
+                <img src="images/cage4.jpg" alt="Hamster Enclosure 4">
+                <img src="images/cage5.jpg" alt="Hamster Enclosure 5">
+                <img src="images/cage6.jpg" alt="Hamster Enclosure 6">
+            </div>
+            <br>
+
+        </section>
+
+        <!--page 3-->
+        <section class="pages" id="page3">
+            <h2 id="behave1">Sniff, Squeak, Repeat!</h2>
+            <div class="gridTemplate">
+                <div class="grid1">
+                    <div class="container1 contentAnim">
+                        <p>
+                            <strong>Food hoarding</strong>: Hamsters carry food in their spacious cheek pouches
+                            and bring it to their underground chambers to store it for later. When their cheeks are
+                            full,
+                            it can make their heads double or triple in size!
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grid2">
+                    <div class="container1 contentAnim">
+                        <p>
+                            <strong>Burrowing behaviour</strong>: Hamsters are skilled diggers, creating burrows with
+                            multiple entrances
+                            and connected chambers for nesting, food storage, and shelter. They dig using their legs,
+                            snouts, and teeth.
+                            In the wild, these burrows help regulate temperature and provide protection from predators.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grid3">
+                    <div class="container1 contentAnim">
+                        <p>
+                            <strong>Social behaviour</strong>: Most hamsters are strictly solitary and may become highly
+                            stressed
+                            or aggressive when housed together, sometimes resulting in serious fights.
+                            Hamsters communicate through body language and scent marking, using scent glands to convey
+                            information and express their mood.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="grid4">
+                    <div class="container1 contentAnim">
+                        <p>
+                            <strong>Sleep-wake cycles</strong>: Hamsters are often described as <a
+                                href="https://thepetfaq.com/are-hamsters-nocturnal-crepuscular-or-diurnal/"
+                                class="extlink">nocturnal or crepuscular</a>, meaning they are most active at dawn and
+                            dusk.
+                            While some sources label them as nocturnal, others suggest their natural behavior is
+                            primarily crepuscular,
+                            as they typically emerge briefly before sunset and return to their burrows after dark.
+                        </p>
+                    </div>
+                </div>
+                <div class="visualAid1 contentAnim"><img src="images/hamsterHoarding.jpg" alt="Hamster hoarding food"></div>
+                <div class="visualAid2 contentAnim"><img src="images/hamsterBurrow.jpg" alt="Hamster ontop of bedding"></div>
+                <div class="visualAid3 contentAnim"><img src="images/hamsterFight.jpg" alt="Two hamsters fighting"></div>
+                <div class="visualAid4 contentAnim"><img src="images/hamsterSleep.jpg" alt="Hamster underground in its burrow"></div>
+            </div>
+            <br>
+            <h2 id="behave2" class="htext contentAnim">Diet</h2>
+            <p class="ptext2 contentAnim">
+                A <strong>balanced diet</strong> is vital for a hamster's health.
+                They need protein, fats, carbohydrates, vitamins, and minerals, with at least 18% protein recommended.
+                Pellets or lab blocks are ideal to prevent selective feeding.
+                Small amounts of vegetables like carrots, broccoli, and spinach can be added.
+                Fruits and herbs may be offered occasionally.
+                <br><br>
+            </p>
+            <p class="ptext2 contentAnim">
+                <strong>Treats</strong>: such as seeds, nuts, dried fruits, and mealworms should be limited. <br>
+                Supplements like vitamin C, calcium blocks, or a little plain yogurt may support overall health.
+            </p>
+            <table id="centerTable">
+                <tr>
+                    <td>
+                        <h2 class="htext contentAnim">Remember:</h2>
+
+                        <ol>
+                            <li>
+                                <p class="contentAnim">Introduce new foods gradually</p>
+                            </li>
+                            <li>
+                                <p class="contentAnim">Limit treats</p>
+                            </li>
+                            <li>
+                                <p class="contentAnim">Always provide fresh water</p>
+                            </li>
+                        </ol>
+                    </td>
+                </tr>
+            </table>
+        </section>
+
+        <!--page 4-->
+        <section class="pages" id="page4">
+            <h2 class="htext contentAnim">5 Common Pet Hamsters</h2>
+            <br>
+            <p class="ptext" id="hamsterName">Syrian Hamster</p>
+            <figure>
+                <div class="flexbox">
+                    <button id="arrowLeft"> &#11164; </button>
+                    <img src="images/Syrian.jpg" alt="Syrian or golden hamster" id="centerImg">
+                    <button id="arrowRight"> &#11166; </button>
+                </div>
+                <figcaption>
+                    <p class="ptext" id="hamsterFact">
+                        The Syrian hamster is one of the most popular pet hamsters and is known for its solitary
+                        behavior.
+                    </p>
+                </figcaption>
+            </figure>
+
+            <!--    MINI QUIZ   -->
+            <h2 class="htext">Hamster Quiz</h2>
+            <p class="ptext">Take this quiz to see how much you know about hamsters!</p>
+            <div class="miniQuiz">
+                <fieldset>
+                    <legend>1. What is the average lifespan of a pet hamster?</legend>
+                    <label>
+                        <input type="radio" name="q1" value="1-2 months"> 1-2 months
+                    </label>
+                    <label>
+                        <input type="radio" name="q1" value="1-3 years"> 1-3 years
+                    </label>
+                    <label>
+                        <input type="radio" name="q1" value="5-7 years"> 5-7 years
+                    </label>
+                    <label>
+                        <input type="radio" name="q1" value="10+ years"> 10+ years
+                    </label>
+                </fieldset>
+                <fieldset>
+                <legend>2. which type of hamster is known for being the largest and most gentle?</legend>
+                <label>
+                    <input type="radio" name="q2" value="Campbell's Dwarf Hamster"> Campbell's Dwarf Hamster
+                </label>
+                <label>
+                    <input type="radio" name="q2" value="Roborovski Hamster"> Roborovski Hamster
+                </label>
+                <label>
+                    <input type="radio" name="q2" value="Syrian Hamster"> Syrian Hamster
+                </label>
+                <label>
+                    <input type="radio" name="q2" value="Chinese Hamster"> Chinese Hamster
+                </label>
+                </fieldset>
+                <fieldset>
+                    <legend>3. What do hamsters primarily use their cheek pouches for?</legend>
+                    <label>
+                        <input type="radio" name="q3" value="To protect themselves"> To protect themselves
+                    </label>
+                    <label>
+                        <input type="radio" name="q3" value="Transport nesting material"> Transport nesting material
+                    </label>
+                    <label>
+                        <input type="radio" name="q3" value="Communicating"> Communicating
+                    </label>
+                    <label>
+                        <input type="radio" name="q3" value="Storing food"> Storing food
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <legend>4. When are hamsters most active?</legend>
+                    <label>
+                        <input type="radio" name="q4" value="Evening and Night"> Evening and Night
+                    </label>
+                    <label>
+                        <input type="radio" name="q4" value="Afternoon"> Afternoon
+                    </label>
+                    <label>
+                        <input type="radio" name="q4" value="Morning"> Morning
+                    </label>
+                    <label>
+                        <input type="radio" name="q4" value="All day"> All day
+                    </label>
+                </fieldset>
+                <fieldset>
+                    <legend>5. Which of these is NOT safe for a hamster to eat?</legend>
+                    <label>
+                        <input type="radio" name="q5" value="Carrot"> Carrot
+                    </label>
+                    <label>
+                        <input type="radio" name="q5" value="Apple (without seeds)"> Apple (without seeds)
+                    </label>
+                    <label>
+                        <input type="radio" name="q5" value="Chocolate"> Chocolate
+                    </label>
+                    <label>
+                        <input type="radio" name="q5" value="Broccoli"> Broccoli
+                    </label>
+                </fieldset>
+            </div>
+
+             
+            <br>
+            <div class="imgAlign">
+                <button id="btnSubmit" class="btnDeco">Submit Quiz</button>
+            </div>
+            <div class="imgAlign">
+                <p id="scorebox">Not yet submitted</p>
+            </div>
+            
+
+        </section>
+    </main>
+    <footer>
+        <p>
+            <strong>&copy; 2025 Lab 01 Chua Xue Ting 241334B</strong>
+            <a href="#bigTitle" id="goBackToTop" class="ptext extlink"></a>
+        </p>
+    </footer>
+    <script src="main.js" defer></script>
+</body>
+
+</html>
