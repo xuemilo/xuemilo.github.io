@@ -588,7 +588,7 @@ body {
 }
 
 .wall14 {
-    top: 90px;
+    top: 100px;
     left: 381px;
     width: 10px;
     height: 290px;
@@ -628,23 +628,23 @@ body {
 }
 
 .wall19 {
-    top: 390px;
-    left: 531px;
-    width: 70px;
+    top: 382px;
+    left: 536px;
+    width: 75px;
     height: 10px;
     background-color: rgb(198, 199, 255);
 }
 
 .wall20 {
-    top: 450px;
-    left: 391px;
-    width: 220px;
+    top: 448px;
+    left: 381px;
+    width: 230px;
     height: 10px;
     background-color: rgb(233, 196, 255);
 }
 
 .wall21 {
-    top: 90px;
+    top: 100px;
     left: 461px;
     width: 10px;
     height: 290px;
@@ -668,7 +668,7 @@ body {
 }
 
 .wall24 {
-    top: 50px;
+    top: 48px;
     left: 601px;
     width: 10px;
     height: 410px;
