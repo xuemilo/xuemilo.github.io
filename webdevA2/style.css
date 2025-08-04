@@ -628,7 +628,7 @@ body {
 }
 
 .wall19 {
-    top: 385px;
+    top: 390px;
     left: 536px;
     width: 75px;
     height: 10px;
@@ -973,4 +973,5 @@ a img#centerImg {
         grid-row: 8/9;
     }
 }
+
 
